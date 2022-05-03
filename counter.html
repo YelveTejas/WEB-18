@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Document</title>
+</head>
+<body>
+    <h1></h1>
+    <button id="inc">Increment</button>
+    <button id="dec">Decrement</button>
+    
+</body>
+</html>
+<script>
+   var count; 
+   if(localStorage.getItem("count")== null){
+       count=0
+   }
+   else{
+       count=localStorage.getItem("count");
+   }
+   document.querySelector("h1").innerText= count;
+   document.querySelector("#dec").addEventListener("click",decfun)
+   function decfun(){
+
+    count--;
+    document.querySelector("h1").innerText= count;
+    localStorage.setItem("counter",count)
+   }
+
+   document.querySelector("#inc").addEventListener("click",incfun)
+   function incfun(){
+       count++
+       document.querySelector("h1").innerText= count;
+       localStorage.setItem("counter",count)
+   }
+</script>
