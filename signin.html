@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Sign in </title>
+</head>
+<body>
+    <form>
+        
+        <input id="mail"placeholder="mail" type="text">
+        <input id="password" placeholder="password" type="text">
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>
+<script>
+    var form = document.querySelector("form")
+    var userdata = JSON.parse(localStorage.getItem("userdata"))
+    form.addEventListener("submit",function(event){
+        event.preventDefault();
+        var data={
+            email:form.mail.value,
+            password:form.password.value,
+        }
+        if(userdata==null){
+            alert("Please SignUp first")
+        }
+        else if(userdata.mail==data.mail && userdata.password == data.password){
+            alert("Signin Successful")
+            localStorage.setItem("signin",JSON.stringify("userdata"))
+        }
+        else{
+            alert("User Does not Exist")
+        }
+    })
+</script>

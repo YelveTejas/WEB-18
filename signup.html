@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Sign Up</title>
+</head>
+<body>
+    <form>
+        <input id="name" placeholder="username" type="text">
+        <input id="mail"placeholder="mail" type="text">
+        <input id="password" placeholder="password" type="text">
+        <input type="submit" value="submit">
+    </form>
+    
+</body>
+</html>
+<script>
+    var form =  document.querySelector("form")
+    form.addEventListener("submit",function(ele){
+        ele.preventDefault();
+        var data = {
+            name:form.name.value,
+            email:form.mail.value,
+            password:form.password.value,
+        }
+        localStorage.setItem("userdata",JSON.stringify(data))
+    })
+</script>
