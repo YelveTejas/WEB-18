@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Sign IN</title>
+</head>
+<body>
+    <form>
+        
+        <input id="mail"placeholder="mail" type="text">
+        <input id="password" placeholder="password" type="text">
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>
+<script>
+    var form = document.querySelector("form");
+    var userdata=JSON.parse(localStorage.getItem("userdata"))
+    form.addEventListener("submit",function(event){
+        event.preventDefault();
+        var data ={
+            email:form.mail.value,
+            password:form.password.value,
+        }
+         if(userdata===null){
+             alert("please SingUp first")
+         }
+         else if(userdata.mail==data.mail && userdata.password==data.password){
+             alert("Sign in Successful")
+             localStorage.setItem("singin",JSON.stringify("userdata"));
+             window.location.href="products.html"
+         }
+         else{
+             alert("User does not exist")
+         }
+
+
+    })
+</script>

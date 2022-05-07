@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Cart</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+ var cartdata=JSON.parse(localStorage.getItem("cart"))  || []
+    
+ function display(data){
+
+cartdata.innerHTML=null;
+data.forEach(function(element){
+    var card = document.createElement("div")
+    
+     var img = document.createElement("img")
+     img.src = element.img
+     var title = document.createElement("h2")
+     title.innerText=element.brand
+     var desc = document.createElement("p")
+     desc.innerText=element.name
+     var category = document.createElement("h3")
+     category.innerText=element.catagory
+     var price = document.createElement("h2")
+     price.innerText=element.price
+     var button = document.createElement("button")
+     button.innerText="Delete"
+     button.addEventListener("click",function(element){
+           Delete(element.productID)
+     })
+     card.append(img,title,desc,category,price,button)
+     products.append(card)
+})
+}    
+  display(cartdata)
+
+  function Delete(id){
+     cartdata=cartdata.filter(function(element){
+         return element.productID != id;
+     })
+     display(cartdata)
+     localStorage.setItem("masai-cart",JSON.stringify(cartdata))
+     alert("product already added")
+  }
+</script>
