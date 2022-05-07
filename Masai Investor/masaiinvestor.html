@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+</head>
+<style>
+#container{
+   display: grid;
+   grid-template-columns: repeat(3,1fr);
+   grid-template-rows: repeat(2,auto);
+   gap:10x;
+   margin: auto;
+   justify-content: space-between;
+}
+p+img{
+    height: 50px;
+}
+button{
+    background-color: white;
+    color: blue;
+    margin-left: -2cm;
+
+}
+#container>div{
+    height:9cm;
+}
+
+</style>
+<body>
+   <div id="container">
+       <div>
+           <img src="" alt="">
+           <h3></h3>
+           <p></p>
+           <img sec="" alt="">
+       </div>
+       <div>
+        <img src="" alt="">
+        <h3></h3>
+        <p></p>
+        <img sec="" alt="">
+       </div>
+       <div></div>
+       <div></div>
+       <div></div>
+       <div></div>
+   </div> 
+    
+</body>
+</html>
+<script>
+    var investordata=[
+    {image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",name:"vijay shekhar",position:"founder & Ceo",logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"},
+    {image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",name:"vijay shekhar",position:"founder & Ceo",logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"},
+    {image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",name:"vijay shekhar",position:"founder & Ceo",logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"},
+    {image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",name:"vijay shekhar",position:"founder & Ceo",logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"},
+    {image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",name:"vijay shekhar",position:"founder & Ceo",logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"},
+    {image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",name:"vijay shekhar",position:"founder & Ceo",logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"},]
+
+     investordata.forEach(function(elem){
+        var box=document.createElement("div")
+        var image=document.createElement("img")
+        image.setAttribute("src",elem.image)
+        var name=document.createElement("h3")
+        name.innerText=elem.name
+        var position =document.createElement("p")
+        position.innerText=elem.position
+        var logo=document.createElement("img")
+        logo.setAttribute("src",elem.logo)
+        var button = document.createElement("button")
+        button.innerText="ADD TO CART"
+
+        box.append(image,name,position,logo,button)
+         document.querySelector("#container").append(box);
+    })
+    
+
+</script>
